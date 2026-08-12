@@ -1,248 +1,251 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ELDEO — Elshaddai Development and Empowerment Organization. Empowering people, strengthening communities and building resilient futures.">
-  <meta name="theme-color" content="#0b3b70">
-  <title>ELDEO | Empowering People. Strengthening Communities.</title>
-  <link rel="icon" href="assets/eldeo-logo.png">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ELDEO — Elshaddai Development and Empowerment Organization. Empowering communities through education, youth and women empowerment, climate action and digital inclusion.">
+<title>ELDEO | Empowering Communities, Creating Opportunity</title>
+<link rel="icon" href="assets/eldeo-logo.png">
+<style>
+:root{
+  --navy:#082b57; --blue:#0b67b2; --green:#16804a; --gold:#e3ad2f;
+  --ink:#10233b; --muted:#607086; --cream:#f7faf7; --white:#fff;
+  --shadow:0 18px 45px rgba(8,43,87,.10); --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.65;background:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1160px,92%);margin:auto}
+.topbar{background:var(--navy);color:#fff;font-size:.9rem}
+.topbar .container{display:flex;justify-content:space-between;gap:20px;padding:8px 0}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #e8edf3}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;color:var(--navy)}
+.brand img{width:48px;height:48px;object-fit:contain}
+.brand span{font-size:1.05rem}
+nav{display:flex;align-items:center;gap:24px;font-weight:700;font-size:.94rem}
+nav a:hover{color:var(--green)}
+.cta{background:var(--green);color:#fff!important;padding:11px 18px;border-radius:999px}
+.menu{display:none;border:0;background:none;font-size:1.7rem}
+.hero{background:linear-gradient(120deg,#062851 0%,#0b67b2 60%,#15905b 100%);color:#fff;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;min-height:620px;gap:45px}
+.eyebrow{text-transform:uppercase;letter-spacing:2px;font-weight:800;color:#d9f1e2;font-size:.82rem;margin-bottom:16px}
+h1{font-size:clamp(2.7rem,6vw,5.3rem);line-height:1.02;letter-spacing:-2px;margin-bottom:22px}
+.hero p{font-size:1.15rem;max-width:650px;color:#edf7ff}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:13px 21px;border-radius:999px;font-weight:800;border:1px solid rgba(255,255,255,.25)}
+.btn.primary{background:#fff;color:var(--navy)}
+.btn.secondary{background:rgba(255,255,255,.10);color:#fff}
+.hero-card{background:#fff;border-radius:30px;padding:24px;box-shadow:0 25px 70px rgba(0,0,0,.25);transform:rotate(1.5deg)}
+.hero-card img{width:100%;height:390px;object-fit:cover;border-radius:20px}
+.hero-card .caption{color:var(--navy);font-weight:800;padding:15px 3px 0}
+section{padding:90px 0}
+.section-head{max-width:760px;margin:0 auto 42px;text-align:center}
+.kicker{color:var(--green);font-weight:900;text-transform:uppercase;letter-spacing:1.7px;font-size:.8rem}
+h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;margin:9px 0 14px;color:var(--navy)}
+.section-head p{color:var(--muted)}
+.about{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about-img{border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
+.about-img img{height:440px;width:100%;object-fit:cover}
+.checks{display:grid;gap:14px;margin-top:24px}
+.check{display:flex;gap:12px;align-items:flex-start}
+.check b{color:var(--green)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid #e7edf2;border-radius:var(--radius);padding:27px;box-shadow:0 8px 30px rgba(8,43,87,.06)}
+.card .icon{width:52px;height:52px;border-radius:15px;background:#eaf6ee;color:var(--green);display:grid;place-items:center;font-size:1.4rem;margin-bottom:18px}
+.card h3{color:var(--navy);margin-bottom:8px;font-size:1.25rem}
+.card p{color:var(--muted)}
+.impact{background:var(--navy);color:#fff}
+.impact h2{color:#fff}
+.impact .section-head p{color:#c9d8e8}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{padding:27px;border:1px solid rgba(255,255,255,.13);border-radius:18px;background:rgba(255,255,255,.06);text-align:center}
+.stat strong{display:block;font-size:2.5rem;color:#bde8ce}
+.stat span{color:#d2dfed}
+.projects{background:#fff}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.project{border-radius:24px;overflow:hidden;background:#fff;border:1px solid #e8edf2;box-shadow:var(--shadow)}
+.project img{height:220px;width:100%;object-fit:cover}
+.project div{padding:23px}
+.project h3{color:var(--navy);margin-bottom:7px}
+.project p{color:var(--muted)}
+.team{background:var(--cream)}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}
+.person{background:#fff;border-radius:20px;overflow:hidden;border:1px solid #e5ebef;box-shadow:0 8px 28px rgba(8,43,87,.06)}
+.person img{width:100%;height:235px;object-fit:cover;object-position:center top}
+.person-body{padding:17px}
+.person h3{font-size:1rem;color:var(--navy);line-height:1.25}
+.role{font-weight:800;color:var(--green);font-size:.88rem;margin:5px 0 10px}
+.degree{font-size:.82rem;color:var(--muted)}
+.team-poster{margin-top:35px;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);background:#fff}
+.team-poster img{width:100%;height:auto}
+.partners{background:#fff}
+.logo-row{display:flex;justify-content:center;align-items:center;gap:28px;flex-wrap:wrap}
+.logo-box{height:115px;width:210px;border:1px solid #e8edf2;border-radius:18px;padding:15px;display:grid;place-items:center;background:#fff}
+.logo-box img{max-height:85px;max-width:170px;object-fit:contain}
+.contact{background:linear-gradient(135deg,#eff9f2,#eef6ff)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.contact-box{background:#fff;padding:32px;border-radius:25px;box-shadow:var(--shadow)}
+.contact-item{display:flex;gap:14px;margin:18px 0}
+.contact-item strong{display:block;color:var(--navy)}
+footer{background:#061e3d;color:#d7e4f2;padding:48px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:35px}
+footer h3{color:#fff;margin-bottom:12px}
+footer p{color:#b9c9da}
+.social{display:inline-block;margin-top:15px;color:#fff;font-weight:800}
+.copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:35px;padding-top:18px;font-size:.85rem}
+@media(max-width:950px){
+ nav{display:none}.menu{display:block}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+ .hero-grid{padding:65px 0}.hero-card{max-width:560px;margin:auto}
+ .cards,.project-grid{grid-template-columns:repeat(2,1fr)}
+ .team-grid{grid-template-columns:repeat(2,1fr)}
+ .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:580px){
+ .topbar .container{justify-content:center;text-align:center}.topbar .container span:last-child{display:none}
+ section{padding:65px 0}.cards,.project-grid,.team-grid,.stats{grid-template-columns:1fr}
+ .hero-card img{height:300px}.about-img img{height:300px}.footer-grid{grid-template-columns:1fr}
+ h1{letter-spacing:-1px}
+}
+</style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container nav-wrap">
-    <a class="brand" href="#home" aria-label="ELDEO home">
-      <img src="assets/eldeo-logo.png" alt="ELDEO logo">
-      <span><b>ELDEO</b><small>Elshaddai Development & Empowerment Organization</small></span>
-    </a>
-    <button class="menu-btn" aria-label="Open navigation" aria-expanded="false">☰</button>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#programs">Programs</a>
-      <a href="#projects">Projects</a>
-      <a href="#impact">Impact</a>
-      <a href="#team">Team</a>
-      <a href="#partners">Partners</a>
-      <a href="#contact" class="nav-cta">Contact</a>
-    </nav>
-  </div>
+<div class="topbar"><div class="container"><span>Elshaddai Development and Empowerment Organization (ELDEO)</span><span>Serving communities through practical, sustainable action</span></div></div>
+
+<header>
+<div class="container nav">
+<a class="brand" href="#home"><img src="assets/eldeo-logo.png" alt="ELDEO logo"><span>ELDEO</span></a>
+<button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+<nav>
+<a href="#about">About</a><a href="#programs">Programs</a><a href="#impact">Impact</a><a href="#team">Team</a><a href="#partners">Partners</a><a class="cta" href="#contact">Contact</a>
+</nav>
+</div>
 </header>
 
-<main id="home">
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">ELSHADDAI DEVELOPMENT & EMPOWERMENT ORGANIZATION</p>
-      <h1>Empowering people.<br><span>Strengthening communities.</span><br>Building resilient futures.</h1>
-      <p class="lead">ELDEO works with schools, young people, women and communities to expand educational opportunity, strengthen livelihoods, advance environmental action and connect people to practical digital skills.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#about">Discover ELDEO</a>
-        <a class="btn btn-light" href="#contact">Partner With Us</a>
-      </div>
-      <div class="hero-note"><span>●</span> Community-led • Education-focused • Climate-conscious • Digitally enabled</div>
-    </div>
-    <div class="hero-card">
-      <img src="assets/eldeo-logo.png" alt="ELDEO">
-      <div class="hero-card-bottom">
-        <strong>Established in 2020</strong>
-        <span>Local action for inclusive and sustainable development.</span>
-      </div>
-    </div>
-  </div>
+<main>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Empowering communities • Creating opportunity</div>
+<h1>Building resilient communities, one opportunity at a time.</h1>
+<p>ELDEO works with children, young people, women and communities to expand access to education, digital skills, livelihoods, environmental action and practical pathways to a more resilient future.</p>
+<div class="actions"><a class="btn primary" href="#programs">Explore our work</a><a class="btn secondary" href="#contact">Work with ELDEO</a></div>
+</div>
+<div class="hero-card">
+<img src="assets/community.jpg" alt="ELDEO community engagement">
+<div class="caption">Community-led action for education, opportunity and sustainable development.</div>
+</div>
+</div>
 </section>
 
-<section class="trust-strip">
-  <div class="container trust-items">
-    <span>Education</span><i>•</i><span>Women & Youth</span><i>•</i><span>Digital Inclusion</span><i>•</i><span>Climate Action</span><i>•</i><span>Livelihoods</span>
-  </div>
+<section class="about" id="about">
+<div class="container about-grid">
+<div class="about-img"><img src="assets/training.jpg" alt="Community digital skills training"></div>
+<div>
+<div class="kicker">Who we are</div><h2>Local action. Practical solutions. Lasting impact.</h2>
+<p>ELDEO (Elshaddai Development and Empowerment Organization) is a community-based organization focused on empowering underserved communities through education, mentorship, digital inclusion, youth and women empowerment, environmental conservation and livelihood innovation.</p>
+<div class="checks">
+<div class="check"><span>✓</span><div><b>Education & mentorship</b><br>Supporting learners with guidance, life skills and opportunities.</div></div>
+<div class="check"><span>✓</span><div><b>Women & youth empowerment</b><br>Building practical skills, livelihoods and pathways into the digital economy.</div></div>
+<div class="check"><span>✓</span><div><b>Climate & circular economy</b><br>Promoting locally relevant environmental and livelihood solutions.</div></div>
+<div class="check"><span>✓</span><div><b>Digital inclusion</b><br>Connecting communities to ICT skills, information and opportunity.</div></div>
+</div>
+</div>
+</div>
 </section>
 
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">WHO WE ARE</p>
-      <h2>From community challenges to practical solutions.</h2>
-      <p>ELDEO was established in 2020 to empower youth, women and communities through education, mentorship, sustainable livelihoods, environmental conservation and digital inclusion.</p>
-    </div>
-    <div class="about-grid">
-      <div class="story-card">
-        <h3>Our story</h3>
-        <p>We were driven by the reality that poverty, limited educational opportunity, unemployment, environmental pressure and digital exclusion often reinforce one another. ELDEO responds by combining local knowledge with practical skills, technology and community action.</p>
-        <p>Our approach is simple: <b>listen to communities, build capacity, test practical ideas, measure results and scale what works.</b></p>
-        <div class="quote">“Technology is a voice for expansion and a tool for production.”</div>
-      </div>
-      <div class="story-card">
-        <h3>Our mission</h3>
-        <p>To leverage local talents and resources to create income-generating opportunities, advocate for an inclusive society, create environmental awareness, promote cultural heritage and drive holistic human development, using technology as a voice for expansion and a tool for production.</p>
-        <h3 class="mini-title">Our vision</h3>
-        <p>Resilient and empowered communities where every person has the opportunity to learn, thrive and build a sustainable future.</p>
-      </div>
-    </div>
-    <div class="values">
-      <div><b>Empowerment</b><span>Building people's capacity to lead change.</span></div>
-      <div><b>Inclusion</b><span>Creating opportunities for people often left behind.</span></div>
-      <div><b>Integrity</b><span>Practising transparency and responsible action.</span></div>
-      <div><b>Collaboration</b><span>Working with communities and institutions for lasting change.</span></div>
-    </div>
-  </div>
+<section id="programs">
+<div class="container">
+<div class="section-head"><div class="kicker">What we do</div><h2>Programs designed around real community needs</h2><p>We combine education, technology, environmental action and economic empowerment to address interconnected barriers facing communities.</p></div>
+<div class="cards">
+<div class="card"><div class="icon">🎓</div><h3>Education & Mentorship</h3><p>Career guidance, life skills, counselling, learner support and initiatives that help children and young people stay connected to education.</p></div>
+<div class="card"><div class="icon">💻</div><h3>Digital Skills & ICT</h3><p>Community ICT access and training in computer literacy, digital finance, e-commerce, online work, content creation and emerging technologies.</p></div>
+<div class="card"><div class="icon">🌱</div><h3>Climate & Environment</h3><p>Rainwater harvesting, tree planting, climate-smart practices and circular-economy approaches that connect environmental action with livelihoods.</p></div>
+<div class="card"><div class="icon">👩🏾‍🤝‍👩🏽</div><h3>Women & Youth Empowerment</h3><p>Practical skills, enterprise pathways and community initiatives that strengthen participation and economic opportunity.</p></div>
+<div class="card"><div class="icon">📊</div><h3>Data for Development</h3><p>Using responsible data collection, analysis and visualization to improve community programs and support evidence-informed decisions.</p></div>
+<div class="card"><div class="icon">🤝</div><h3>Community Partnerships</h3><p>Working with schools, local leaders, institutions and development partners to turn ideas into scalable community action.</p></div>
+</div>
+</div>
 </section>
 
-<section class="section soft" id="programs">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">WHAT WE DO</p>
-      <h2>Programs designed around real community needs.</h2>
-      <p>Our work connects people, knowledge, technology, local resources and opportunities.</p>
-    </div>
-    <div class="program-grid">
-      <article class="program"><span class="program-icon">🎓</span><h3>Education, Mentorship & Guidance</h3><p>Mentorship, counselling, career guidance, life skills and school-community initiatives that help learners remain in education and make informed decisions.</p></article>
-      <article class="program"><span class="program-icon">💻</span><h3>Digital Skills & ICT</h3><p>Basic computer skills, digital literacy, e-commerce, freelancing, MS Office, graphic design, coding, content creation and digital marketing through community learning spaces.</p></article>
-      <article class="program"><span class="program-icon">♻️</span><h3>Green Enterprise & Livelihoods</h3><p>Upcycling waste, natural biofertilizers, biochar, biopesticides, handmade products and other circular-economy pathways that can create green jobs.</p></article>
-      <article class="program"><span class="program-icon">🌱</span><h3>Climate & Environmental Action</h3><p>Tree planting, rainwater harvesting, school gardens, environmental clubs and locally appropriate climate-resilience solutions.</p></article>
-      <article class="program"><span class="program-icon">👧🏾</span><h3>Adolescent Girls & Boys</h3><p>Life-skills and mentorship addressing school dropout, early pregnancy, early marriage, HIV/AIDS, drug abuse and other risks affecting young people.</p></article>
-      <article class="program"><span class="program-icon">🏘️</span><h3>Community Development</h3><p>Locally owned initiatives that strengthen community participation, livelihoods, inclusion and resilience in underserved areas.</p></article>
-    </div>
-  </div>
+<section class="impact" id="impact">
+<div class="container">
+<div class="section-head"><div class="kicker">Our journey</div><h2>From one community idea to a growing movement</h2><p>Our work has included school gardens, environmental action, mentorship, girls' life-skills programming, community ICT and practical skills development.</p></div>
+<div class="stats">
+<div class="stat"><strong>200+</strong><span>Women reached through empowerment activities</span></div>
+<div class="stat"><strong>200</strong><span>Students supported through Harvesting Hope</span></div>
+<div class="stat"><strong>200+</strong><span>Trees planted through environmental action</span></div>
+<div class="stat"><strong>5</strong><span>Schools reached through girls' life-skills work</span></div>
+</div>
+</div>
 </section>
 
-<section class="section" id="projects">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">PROJECTS & INITIATIVES</p>
-      <h2>Ideas turned into community action.</h2>
-    </div>
-    <div class="project-grid">
-      <article class="project featured">
-        <img src="assets/community-group.jpg" alt="Community participants">
-        <div class="project-body"><span class="tag">Climate + Education</span><h3>Harvesting Hope</h3><p>A rainwater-harvesting and school-garden initiative linking environmental resilience, food production and student wellbeing. The initiative planted 200 trees and supported 200 students.</p></div>
-      </article>
-      <article class="project">
-        <img src="assets/students.jpg" alt="Students participating in a learning activity">
-        <div class="project-body"><span class="tag">Adolescent Mentorship</span><h3>Adolescent Mentorship & Life Skills</h3><p>Mentorship reaching adolescent girls and vulnerable boys with guidance around education, health, decision-making, rights and positive futures.</p></div>
-      </article>
-      <article class="project">
-        <div class="project-body"><span class="tag">Girls + Life Skills</span><h3>ABSTAIN YOU GAIN CLUB</h3><p>A school-based initiative launched in 2024 to strengthen life skills, confidence, decision-making and educational continuity for girls.</p></div>
-      </article>
-      <article class="project">
-        <div class="project-body"><span class="tag">Women + Youth</span><h3>ECOGROW Community Hub</h3><p>A community hub concept bringing together circular-economy skills, environmental action, digital learning and livelihood opportunities.</p></div>
-      </article>
-      <article class="project">
-        <img src="assets/community-training.jpg" alt="Community digital training">
-        <div class="project-body"><span class="tag">Digital Economy</span><h3>Digital Skills & Online Entrepreneurship</h3><p>Training youth and women in digital marketing, content creation, freelancing and social-media management to improve employability and access to online markets.</p></div>
-      </article>
-      <article class="project">
-        <div class="project-body"><span class="tag">Digital Inclusion</span><h3>Community ICT Hub</h3><p>A practical space for digital learning, community data work, skills development and access to opportunities in the digital and circular economies.</p></div>
-      </article>
-    </div>
-  </div>
+<section class="projects">
+<div class="container">
+<div class="section-head"><div class="kicker">Featured initiatives</div><h2>Projects turning ideas into action</h2></div>
+<div class="project-grid">
+<div class="project"><img src="assets/community.jpg" alt="Community empowerment"><div><h3>Harvesting Hope</h3><p>Rainwater harvesting and school gardening designed to strengthen food security, learning and student participation.</p></div></div>
+<div class="project"><img src="assets/students.jpg" alt="Students participating in a school activity"><div><h3>ABSTAIN YOU GAIN CLUB</h3><p>A life-skills and mentorship initiative supporting girls with positive choices, confidence and pathways to stay in school.</p></div></div>
+<div class="project"><img src="assets/training.jpg" alt="Digital training"><div><h3>ECOGROW & Community ICT Hub</h3><p>A vision for practical digital skills, circular-economy learning, environmental innovation and community access to technology.</p></div></div>
+</div>
+</div>
 </section>
 
-<section class="section dark-section" id="impact">
-  <div class="container">
-    <div class="section-heading light">
-      <p class="eyebrow">IMPACT</p>
-      <h2>Evidence of action — with room to grow.</h2>
-      <p>Reported reach and results from ELDEO initiatives. New project data can be added as monitoring and evaluation continues.</p>
-    </div>
-    <div class="impact-grid">
-      <div class="impact-number"><strong>1,500+</strong><span>Adolescent girls reached through mentorship</span></div>
-      <div class="impact-number"><strong>100</strong><span>Youth & women equipped with digital skills</span></div>
-      <div class="impact-number"><strong>200</strong><span>Trees planted through Harvesting Hope</span></div>
-      <div class="impact-number"><strong>200</strong><span>Students supported through Harvesting Hope</span></div>
-      <div class="impact-number"><strong>200</strong><span>Women trained through community initiatives</span></div>
-      <div class="impact-number"><strong>5</strong><span>Schools reached through adolescent-focused initiatives</span></div>
-    </div>
-  </div>
+<section class="team" id="team">
+<div class="container">
+<div class="section-head"><div class="kicker">Our people</div><h2>A team combining community experience, data, finance and technology</h2><p>ELDEO brings together complementary skills to strengthen accountability, innovation and community impact.</p></div>
+<div class="team-grid">
+<div class="person"><img src="assets/steven.jpg" alt="Steven Oduol"><div class="person-body"><h3>Steven Oduol</h3><div class="role">Finance Manager</div><div class="degree">MBA in Finance Option</div></div></div>
+<div class="person"><img src="assets/meryl.jpg" alt="Meryl Florence Joy Ochieng"><div class="person-body"><h3>Meryl Florence Joy Ochieng</h3><div class="role">Data Analyst</div><div class="degree">Degree in Statistics</div></div></div>
+<div class="person"><img src="assets/evaline.jpg" alt="Evaline Oduol"><div class="person-body"><h3>Evaline Oduol</h3><div class="role">Co-founder</div><div class="degree">Degree in Community Development</div></div></div>
+<div class="person"><img src="assets/dawkins.jpg" alt="Dawkins Ochieng"><div class="person-body"><h3>Dawkins Ochieng</h3><div class="role">ICT Manager</div><div class="degree">BSc Computer Science</div></div></div>
+<div class="person"><img src="assets/brian.jpg" alt="Brian Omondi Okello"><div class="person-body"><h3>Brian Omondi Okello</h3><div class="role">Founder & Project Lead</div><div class="degree">BEd Arts • YALI Alumni • Wyss Academy • ICT Champion</div></div></div>
+</div>
+<div class="team-poster"><img src="assets/team.jpg" alt="ELDEO team"></div>
+</div>
 </section>
 
-<section class="section" id="team">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">OUR TEAM</p>
-      <h2>People behind the mission.</h2>
-      <p>A multidisciplinary team bringing together finance, data, community development, ICT and education leadership.</p>
-    </div>
-    <div class="team-grid">
-      <article class="team-card"><img src="assets/steven-oduol.jpg" alt="Steven Oduol"><div><h3>Steven Oduol</h3><p class="role">Finance Manager</p><p>MBA — Finance Option</p></div></article>
-      <article class="team-card"><img src="assets/meryl-florence-joy-ochieng.jpg" alt="Meryl Florence Joy Ochieng"><div><h3>Meryl Florence Joy Ochieng</h3><p class="role">Data Analyst</p><p>Degree in Statistics</p></div></article>
-      <article class="team-card"><img src="assets/evaline-oduol.jpg" alt="Evaline Oduol"><div><h3>Evaline Oduol</h3><p class="role">Co-Founder</p><p>Degree in Community Development</p></div></article>
-      <article class="team-card"><img src="assets/dawkins-ochieng.jpg" alt="Dawkins Ochieng"><div><h3>Dawkins Ochieng</h3><p class="role">ICT Manager</p><p>BSc Computer Science</p></div></article>
-      <article class="team-card"><img src="assets/brian-omondi-okello.jpg" alt="Brian Omondi Okello"><div><h3>Brian Omondi Okello</h3><p class="role">ICT Champion / Digital & Education Lead</p><p>BEd Arts • YALI Alumnus • Wyss Academy</p></div></article>
-    </div>
-  </div>
+<section class="partners" id="partners">
+<div class="container">
+<div class="section-head"><div class="kicker">Partners & affiliations</div><h2>Connected to a wider ecosystem of learning and development</h2><p>Logos shown here represent organizations and affiliations shared with us for ELDEO's public profile.</p></div>
+<div class="logo-row">
+<div class="logo-box"><img src="assets/usaid.png" alt="USAID"></div>
+<div class="logo-box"><img src="assets/yali.png" alt="YALI Regional Leadership Center East Africa"></div>
+<div class="logo-box"><img src="assets/ku.png" alt="Kenyatta University"></div>
+</div>
+</div>
 </section>
 
-<section class="section soft" id="partners">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">PARTNERS, DONORS & INSTITUTIONS</p>
-      <h2>Collaboration makes community impact stronger.</h2>
-      <p>ELDEO values partnerships with institutions, schools, communities and development actors.</p>
-    </div>
-    <div class="logo-grid">
-      <div class="logo-card"><img src="assets/usaid-logo.jpg" alt="USAID logo"><b>USAID</b><span>Supporting institution / development partner</span></div>
-      <div class="logo-card"><img src="assets/yali-logo.jpg" alt="YALI Regional Leadership Center East Africa logo"><b>YALI Regional Leadership Center East Africa</b><span>Leadership and capacity-building ecosystem</span></div>
-      <div class="logo-card"><img src="assets/ku-logo.jpg" alt="Kenyatta University logo"><b>Kenyatta University</b><span>Academic and institutional ecosystem</span></div>
-    </div>
-    <div class="partner-columns">
-      <div><h3>Community & School Relationships</h3><ul><li>Schools and school clubs</li><li>Youth and women groups</li><li>Community leaders</li><li>Local institutions</li></ul></div>
-      <div><h3>Other collaborators referenced by ELDEO</h3><ul><li>Ajira Digital</li><li>Siaya County Government</li><li>Ministry of Education</li><li>Community-based partners</li></ul></div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">OUR STRATEGIC FUTURE</p>
-      <h2>Scaling what works.</h2>
-    </div>
-    <div class="roadmap">
-      <div><span>01</span><h3>1–3 Years</h3><p>Expand circular-economy training toward 1,000 women and 2,000 youth; strengthen adolescent clubs and digital skills programs.</p></div>
-      <div><span>02</span><h3>3–5 Years</h3><p>Build stronger partnerships with national, regional and international institutions and expand evidence-based community programs.</p></div>
-      <div><span>03</span><h3>Long Term</h3><p>Grow ECOGROW and the CHILDREN BACK TO SCHOOL vision, using community data, education and livelihoods to reduce poverty and school dropout.</p></div>
-      <div><span>04</span><h3>2035 Ambition</h3><p>Develop a scalable ELDEO model that can reach communities across Kenya while preserving local ownership and accountability.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section sdg-section">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">SUSTAINABLE DEVELOPMENT GOALS</p>
-      <h2>Our work contributes to shared global priorities.</h2>
-    </div>
-    <div class="sdgs">
-      <span>SDG 1 — No Poverty</span><span>SDG 4 — Quality Education</span><span>SDG 5 — Gender Equality</span><span>SDG 8 — Decent Work</span><span>SDG 13 — Climate Action</span>
-    </div>
-  </div>
-</section>
-
-<section class="section cta-section" id="contact">
-  <div class="container cta-box">
-    <div>
-      <p class="eyebrow">GET INVOLVED</p>
-      <h2>Let's build resilient futures together.</h2>
-      <p>Partner with ELDEO, support a project, volunteer your skills or help us reach more communities.</p>
-    </div>
-    <div class="contact-actions">
-      <a class="btn btn-primary" href="tel:+254700753302">Call 0700 753 302</a>
-      <a class="btn btn-whatsapp" href="https://wa.me/254700753302" target="_blank" rel="noopener">WhatsApp ELDEO</a>
-      <a class="btn btn-facebook" href="https://www.facebook.com/share/1BhQS1pZ2c/" target="_blank" rel="noopener">Facebook</a>
-    </div>
-  </div>
+<section class="contact" id="contact">
+<div class="container contact-grid">
+<div>
+<div class="kicker">Get involved</div><h2>Let's build practical solutions together.</h2>
+<p>Whether you are a community organization, school, donor, institution, volunteer or development partner, ELDEO welcomes conversations that can turn local ideas into sustainable action.</p>
+</div>
+<div class="contact-box">
+<div class="contact-item"><div>📞</div><div><strong>Phone</strong><a href="tel:0700753302">0700 753 302</a></div></div>
+<div class="contact-item"><div>📘</div><div><strong>Facebook</strong><a href="https://www.facebook.com/share/1BhQS1pZ2c/" target="_blank" rel="noopener">Visit ELDEO on Facebook</a></div></div>
+<div class="contact-item"><div>📍</div><div><strong>Community focus</strong><span>Western Kenya and surrounding communities</span></div></div>
+</div>
+</div>
 </section>
 </main>
 
 <footer>
-  <div class="container footer-grid">
-    <div><img class="footer-logo" src="assets/eldeo-logo.png" alt="ELDEO"><h3>ELDEO</h3><p>Elshaddai Development and Empowerment Organization.</p><p>Empowering people. Strengthening communities. Building resilient futures.</p></div>
-    <div><h3>Explore</h3><a href="#about">About</a><a href="#programs">Programs</a><a href="#projects">Projects</a><a href="#team">Team</a><a href="#partners">Partners</a></div>
-    <div><h3>Contact</h3><p>Kenya</p><p><a href="tel:+254700753302">0700 753 302</a></p><p><a href="https://www.facebook.com/share/1BhQS1pZ2c/" target="_blank" rel="noopener">Facebook</a></p></div>
-  </div>
-  <div class="container copyright">© 2026 Elshaddai Development and Empowerment Organization (ELDEO). All rights reserved.</div>
+<div class="container">
+<div class="footer-grid">
+<div><h3>ELDEO</h3><p>Elshaddai Development and Empowerment Organization — empowering communities through education, opportunity, digital inclusion, environmental action and practical skills.</p></div>
+<div><h3>Explore</h3><p><a href="#about">About</a><br><a href="#programs">Programs</a><br><a href="#impact">Impact</a><br><a href="#team">Team</a></p></div>
+<div><h3>Connect</h3><p><a href="tel:0700753302">0700 753 302</a></p><a class="social" href="https://www.facebook.com/share/1BhQS1pZ2c/" target="_blank" rel="noopener">Facebook →</a></div>
+</div>
+<div class="copyright">© 2026 ELDEO. All rights reserved.</div>
+</div>
 </footer>
-<script src="script.js"></script>
+<script>
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+</script>
 </body>
 </html>
