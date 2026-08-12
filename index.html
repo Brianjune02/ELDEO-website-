@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ELDEO — Elshaddai Development and Empowerment Organization. Empowering communities through education, youth and women empowerment, climate action and digital skills.">
+<title>ELDEO | Empowering Communities, Creating Opportunity</title>
+<style>
+:root{
+  --green:#126b45; --green2:#1f8a5b; --gold:#f0b429; --dark:#12352a;
+  --cream:#f7f5ed; --white:#fff; --muted:#63736c; --light:#eaf4ee;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--dark);line-height:1.6;background:#fff}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid #e6ece8}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.25rem;color:var(--green)}
+.logo-mark{width:42px;height:42px;border-radius:12px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900}
+nav{display:flex;gap:25px;align-items:center}
+nav a{font-size:.94rem;font-weight:600}
+nav a:hover{color:var(--green2)}
+.menu{display:none;border:0;background:none;font-size:1.5rem}
+.btn{display:inline-block;padding:13px 20px;border-radius:9px;background:var(--green);color:#fff;font-weight:700;border:2px solid var(--green);cursor:pointer}
+.btn:hover{background:#0d5839}
+.btn.alt{background:transparent;color:var(--green)}
+.hero{background:linear-gradient(120deg,#edf7f0 0%,#fff 58%,#fff5d9 100%);padding:88px 0 76px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.eyebrow{color:var(--green2);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;margin-bottom:15px}
+h1{font-size:clamp(2.6rem,6vw,4.7rem);line-height:1.02;letter-spacing:-.04em;margin-bottom:22px}
+.hero p{font-size:1.12rem;color:#53665d;max-width:650px;margin-bottom:28px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{background:var(--green);color:#fff;border-radius:28px;padding:30px;box-shadow:0 20px 50px rgba(18,107,69,.18)}
+.hero-card h3{font-size:1.5rem;margin-bottom:15px}
+.hero-card p{color:#e7f4ec;font-size:1rem;margin-bottom:22px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:15px;padding:17px}
+.stat strong{display:block;font-size:1.7rem}.stat span{font-size:.82rem;color:#d8eee2}
+section{padding:82px 0}
+.section-head{max-width:720px;margin-bottom:40px}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin-bottom:12px}
+.section-head p{color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border:1px solid #e2eae5;border-radius:18px;padding:26px;background:#fff}
+.card .icon{font-size:2rem;margin-bottom:15px}
+.card h3{margin-bottom:8px;font-size:1.2rem}.card p{color:var(--muted);font-size:.94rem}
+.band{background:var(--cream)}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.project{padding:30px;border-radius:20px;background:#fff;border:1px solid #e4e8df}
+.project h3{font-size:1.4rem;margin:10px 0}.project p{color:var(--muted)}
+.tag{display:inline-block;padding:6px 10px;border-radius:30px;background:var(--light);color:var(--green);font-size:.75rem;font-weight:800}
+.impact{background:var(--green);color:#fff}
+.impact .section-head p{color:#d9eee3}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.impact-item{text-align:center;padding:20px;border:1px solid rgba(255,255,255,.16);border-radius:15px}
+.impact-item strong{font-size:2.2rem;display:block}.impact-item span{font-size:.85rem;color:#d8eee2}
+.cta{background:linear-gradient(120deg,#f5c64a,#f7e7a9)}
+.cta-box{display:flex;justify-content:space-between;gap:30px;align-items:center}.cta h2{font-size:2.2rem;line-height:1.1;margin-bottom:8px}.cta p{color:#5f542d}
+footer{background:#0d2c21;color:#dcece4;padding:55px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:35px}
+footer h3{color:#fff;margin-bottom:12px}footer p,footer a{color:#b9cec4;font-size:.92rem}footer a{display:block;margin:7px 0}.copy{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;font-size:.8rem;color:#91aa9e}
+@media(max-width:800px){
+ nav{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;padding:20px;flex-direction:column;border-bottom:1px solid #ddd}
+ nav.open{display:flex}.menu{display:block}
+ .hero-grid,.cards,.projects,.footer-grid{grid-template-columns:1fr}
+ .impact-grid{grid-template-columns:repeat(2,1fr)}
+ .hero{padding-top:55px}.cta-box{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home"><span class="logo-mark">E</span><span>ELDEO</span></a>
+    <button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#about">About</a><a href="#programs">Programs</a><a href="#projects">Projects</a>
+      <a href="#impact">Impact</a><a href="#get-involved">Get Involved</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">Elshaddai Development & Empowerment Organization</div>
+<h1>Building resilient communities. Creating pathways to opportunity.</h1>
+<p>ELDEO works with schools, young people, women and communities to advance education, climate action, digital inclusion and sustainable livelihoods.</p>
+<div class="actions">
+<a class="btn" href="#programs">Explore Our Work</a>
+<a class="btn alt" href="#get-involved">Get Involved</a>
+</div>
+</div>
+<div class="hero-card">
+<h3>Our approach</h3>
+<p>We connect community action with practical skills, mentorship, environmental solutions and opportunities for young people and women.</p>
+<div class="stats">
+<div class="stat"><strong>7+</strong><span>Years of teaching & community experience</span></div>
+<div class="stat"><strong>200+</strong><span>Women reached through empowerment work</span></div>
+<div class="stat"><strong>200</strong><span>Trees planted through community action</span></div>
+<div class="stat"><strong>5</strong><span>Schools reached by girls' life-skills programming</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Who we are</div><h2>Local action for stronger futures.</h2>
+<p>ELDEO is a community-focused organization working to turn local challenges into practical opportunities. Our work brings together education, mentorship, environmental conservation, women's and youth empowerment, and digital skills.</p></div>
+<div class="cards">
+<div class="card"><div class="icon">🎓</div><h3>Education & Mentorship</h3><p>Supporting learners through guidance, counselling, life skills, career awareness and pathways back to education.</p></div>
+<div class="card"><div class="icon">🌱</div><h3>Climate & Environment</h3><p>Promoting practical community solutions including tree planting, rainwater harvesting and circular-economy approaches.</p></div>
+<div class="card"><div class="icon">💻</div><h3>Digital Inclusion</h3><p>Helping young people, women and communities build practical digital skills for learning, work and enterprise.</p></div>
+</div>
+</div>
+</section>
+
+<section id="programs" class="band">
+<div class="container">
+<div class="section-head"><div class="eyebrow">What we do</div><h2>Programs designed around real community needs.</h2></div>
+<div class="cards">
+<div class="card"><div class="icon">👩🏾‍🌾</div><h3>Women & Youth Empowerment</h3><p>Skills and livelihood opportunities through circular economy, biofertilizers, biochar, biopesticides and digital economy training.</p></div>
+<div class="card"><div class="icon">👧🏾</div><h3>Girls' Life Skills</h3><p>Mentorship, counselling and life-skills support designed to strengthen girls' confidence, choices and educational continuity.</p></div>
+<div class="card"><div class="icon">📚</div><h3>Education Support</h3><p>Community and school-based interventions addressing barriers to learning, attendance, mentorship and student wellbeing.</p></div>
+<div class="card"><div class="icon">🌍</div><h3>Environmental Action</h3><p>Community conservation and climate-resilience initiatives that connect environmental action with food and education outcomes.</p></div>
+<div class="card"><div class="icon">🖥️</div><h3>ICT & Digital Skills</h3><p>Practical training in computer use, data, online work, digital finance, design, content creation and digital enterprise.</p></div>
+<div class="card"><div class="icon">🤝🏾</div><h3>Community Development</h3><p>Working with schools, families, community groups and local leaders to develop locally owned solutions.</p></div>
+</div>
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Featured projects</div><h2>Turning ideas into measurable community action.</h2></div>
+<div class="projects">
+<div class="project"><span class="tag">Climate + Education</span><h3>Harvesting Hope</h3><p>A rainwater-harvesting and school-garden initiative that linked environmental resilience with student nutrition and school participation. The initiative planted 200 trees and supported food production for students.</p></div>
+<div class="project"><span class="tag">Girls + Life Skills</span><h3>ABSTAIN YOU GAIN CLUB</h3><p>A life-skills and mentorship initiative launched in 2024 to support girls across schools with guidance, confidence, decision-making and educational continuity.</p></div>
+<div class="project"><span class="tag">Women + Youth</span><h3>ECOGROW Community Hub</h3><p>A planned community hub bringing together circular-economy skills, environmental action, digital learning and livelihood opportunities for women and youth.</p></div>
+<div class="project"><span class="tag">Digital Inclusion</span><h3>Community ICT Hub</h3><p>A practical digital-skills space designed to connect communities with computer training, data skills, digital enterprise, content creation and online opportunities.</p></div>
+</div>
+</div>
+</section>
+
+<section id="impact" class="impact">
+<div class="container">
+<div class="section-head"><div class="eyebrow">Our impact</div><h2>Small actions can create measurable change.</h2><p>Our growing body of work is rooted in schools and communities, with an emphasis on practical outcomes and scalable solutions.</p></div>
+<div class="impact-grid">
+<div class="impact-item"><strong>200+</strong><span>Women reached through empowerment activities</span></div>
+<div class="impact-item"><strong>200</strong><span>Trees planted in 2023</span></div>
+<div class="impact-item"><strong>200</strong><span>Students supported through Harvesting Hope</span></div>
+<div class="impact-item"><strong>30%</strong><span>Reported decline in absenteeism in the Harvesting Hope context</span></div>
+</div>
+</div>
+</section>
+
+<section id="get-involved" class="cta">
+<div class="container cta-box">
+<div><h2>Help us build resilient futures.</h2><p>Partner with ELDEO, volunteer your skills, mentor a young person or support a community project.</p></div>
+<a class="btn" href="#contact">Partner With Us</a>
+</div>
+</section>
+</main>
+
+<footer id="contact">
+<div class="container">
+<div class="footer-grid">
+<div><h3>ELDEO</h3><p>Elshaddai Development and Empowerment Organization — empowering communities through education, environmental action, digital inclusion and sustainable livelihoods.</p></div>
+<div><h3>Explore</h3><a href="#about">About</a><a href="#programs">Programs</a><a href="#projects">Projects</a><a href="#impact">Impact</a></div>
+<div><h3>Contact</h3><p>Kenya</p><p style="margin-top:8px">Email: <a href="mailto:info@eldeo.org">info@eldeo.org</a></p><p>Phone: <a href="tel:+254000000000">+254 XXX XXX XXX</a></p><p style="margin-top:8px">Replace these placeholders with ELDEO's official contact details.</p></div>
+</div>
+<div class="copy">© 2026 ELDEO. All rights reserved.</div>
+</div>
+</footer>
+<script>
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));
+</script>
+</body>
+</html>
